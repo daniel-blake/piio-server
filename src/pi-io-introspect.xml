@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<node name="/nl/miqra/PiIo">
+   <interface name="nl.miqra.PiIo">
+        <method name="IoGroups">
+            <arg name="groups" type="ao" direction="out" />
+        </method>
+        <signal name="OnButtonPress">
+            <arg type="s" name="longhandle" />
+        </signal>	
+        <signal name="OnButtonHold">
+            <arg type="s" name="longhandle" />
+        </signal>	
+        <signal name="OnInputChanged">
+            <arg type="s" name="longhandle" />
+			<arg type="b" name="value" />
+        </signal>	
+        <signal name="OnMbInputChanged">
+            <arg type="s" name="longhandle" />
+			<arg type="u" name="value" />
+        </signal>
+   </interface>
+   <interface name="nl.miqra.PiIo.IoGroup">
+        <method name="Name">
+            <arg name="name" type="s" direction="out" />
+        </method>
+        <method name="Interface">
+            <arg name="interface" type="s" direction="out" />
+        </method>
+   </interface>
+   <interface name="nl.miqra.PiIo.IoGroup.Digital">
+   
+        <method name="Buttons">
+            <arg name="button" type="as" direction="out" />
+        </method>
+        <method name="GetButton">
+            <arg type="s" name="handle" direction="in" />
+            <arg type="b" name="value" direction="out" />
+        </method>
+
+        <method name="Inputs">
+            <arg name="input" type="as" direction="out" />
+        </method>
+        <method name="GetInput">
+            <arg type="s" name="handle" direction="in" />
+            <arg type="b" name="value" direction="out" />
+        </method>
+
+        <method name="Outputs">
+            <arg name="outputs" type="as" direction="out" />
+        </method>
+        <method name="SetOutput">
+            <arg type="s" name="handle" direction="in" />
+            <arg type="b" name="value" direction="in" />
+        </method>
+        <method name="GetOutput">
+            <arg type="s" name="handle" direction="in" />
+            <arg type="b" name="value" direction="out" />
+        </method>
+
+        <method name="MbInputs">
+            <arg name="mbinput" type="as" direction="out" />
+        </method>
+        <method name="GetMbInput">
+            <arg type="s" name="handle" direction="in" />
+            <arg type="u" name="value" direction="out" />
+        </method>
+
+        <method name="MbOutputs">
+            <arg name="outputs" type="as" direction="out" />
+        </method>
+        <method name="SetMbOutput">
+            <arg type="s" name="handle" direction="in" />
+            <arg type="u" name="value" direction="in" />
+        </method>
+        <method name="GetMbOutput">
+            <arg type="s" name="handle" direction="in" />
+            <arg type="u" name="value" direction="out" />
+        </method>
+
+        <method name="Pwms">
+            <arg name="pwms" type="as" direction="out" />
+        </method>
+        <method name="SetPwm">
+            <arg type="s" name="handle" direction="in" />
+            <arg type="y" name="value" direction="in" />
+        </method>
+        <method name="SetLedPwm">
+            <arg type="s" name="handle" direction="in" />
+            <arg type="y" name="value" direction="in" />
+        </method>
+        <method name="GetPwm">
+            <arg type="s" name="handle" direction="in" />
+            <arg type="y" name="value" direction="out" />
+        </method>
+
+        <signal name="ButtonPress">
+            <arg type="s" name="handle" />
+        </signal>	
+        <signal name="ButtonHold">
+            <arg type="s" name="handle" />
+        </signal>	
+        <signal name="InputChanged">
+            <arg type="s" name="handle" />
+			<arg type="b" name="value" />
+        </signal>	
+        <signal name="OutputChanged">
+            <arg type="s" name="handle" />
+			<arg type="b" name="value" />
+        </signal>
+        <signal name="MbInputChanged">
+            <arg type="s" name="handle" />
+			<arg type="u" name="value" />
+        </signal>	
+        <signal name="MbOutputChanged">
+            <arg type="s" name="handle" />
+			<arg type="u" name="value" />
+        </signal>
+        <signal name="PwmValueChanged">
+            <arg type="s" name="handle" />
+			<arg type="y" name="value" />
+        </signal>
+   </interface>
+   
+   <interface name="nl.miqra.PiIo.IoGroup.Pwm">
+        <method name="Pwms">
+            <arg name="pwms" type="as" direction="out" />
+        </method>
+        <method name="SetValue">
+            <arg type="s" name="handle" direction="in" />
+            <arg type="d" name="value" direction="in" />
+        </method>
+        <method name="GetValue">
+            <arg type="s" name="handle" direction="in" />
+            <arg type="d" name="value" direction="out" />
+        </method>
+        <method name="GetMin">
+        	<arg type="s" name="handle" direction="in" />
+        	<arg type="d" name="value" direction="out" />
+       	</method>
+       	<method name="GetMax">
+        	<arg type="s" name="handle" direction="in" />
+        	<arg type="d" name="value" direction="out" />
+       	</method>
+        <signal name="PwmValueChanged">
+            <arg type="s" name="handle" />
+			<arg type="d" name="value" />
+        </signal>
+   </interface>   
+   
+   
+ </node>

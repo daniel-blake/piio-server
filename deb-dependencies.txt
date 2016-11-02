@@ -1,0 +1,8 @@
+autoconf-archive
+libconfig++-dev
+libboost-all-dev
+libdbus-c++-bin
+libdbus-c++-dev
+libdbus-1-dev
+dh-make
+

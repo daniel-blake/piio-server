@@ -1,0 +1,14 @@
+Source: piio-server
+Section: electronics
+Priority: extra
+Maintainer: Miqra Engineering Packaging <packaging@miqra.nl>
+Build-Depends: debhelper (>= 8.0.0), autotools-dev, autoconf-archive, libconfig++-dev, libboost-all-dev, libdbus-c++-bin, libdbus-c++-dev, libdbus-1-dev
+Standards-Version: 3.9.3
+Homepage: <insert the upstream URL, if relevant>
+
+Package: piio-server
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Service to make GPIO and IO Extenders available to all applciations over a DBUS interface
+ Service to make GPIO and IO Extenders available to all applciations over a DBUS interface.
+ You can specify your hardware layout in a configuration file. Through DBUS the entire interface your specify will be available

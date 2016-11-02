@@ -1,0 +1,8 @@
+Monitor bus:
+    dbus-monitor "path='/nl/miqra/PiIo'" --system
+
+Call method on bus:
+    dbus-send --system --dest=nl.miqra.PiIo --print-reply --type=method_call /nl/miqra/PiIo nl.miqra.PiIo.IoGroups
+
+Rebuild make system:
+    autoreconf -i
